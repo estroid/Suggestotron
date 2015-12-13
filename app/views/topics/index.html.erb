@@ -15,8 +15,8 @@
   <tr>
     <td><%= link_to topic.title, topic %></td>
 
-      <% upvotes = Vote.where(topic_id: topic.id, upvote: true) %>
-      <% downvotes = Vote.where(topic_id: topic.id, upvote: false) %>
+      <% upvotes = Vote.where(topic_id: topic, upvote: true) %>
+      <% downvotes = Vote.where(topic_id: topic, upvote: false) %>
       <% votes = upvotes.count - downvotes.count %>
 
     <td><%= pluralize(votes, "vote") %></td>
